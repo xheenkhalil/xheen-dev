@@ -4,16 +4,18 @@ import { JsonLd } from "@/components/json-ld";
 import { ProjectCard } from "@/components/project-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { getProject, projects } from "@/data/projects";
+import { getProject, getProjects } from "@/data/projects";
 import { site } from "@/data/site";
 import { extractToc, markdownToHtml } from "@/lib/markdown";
 import { absUrl, breadcrumbJsonLd, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/projects/$slug")({
-  loader: ({ params }) => {
-    const project = getProject(params.slug);
+  loader: async ({ params }) => {
+    const project = await getProject(params.slug);
     if (!project) throw notFound();
-    return { project };
+    const allProjects = await getProjects();
+    const others = allProjects.filter((item) => item.slug !== project.slug).slice(0, 3);
+    return { project, others };
   },
   head: ({ loaderData }) => {
     const project = loaderData?.project;
@@ -28,10 +30,9 @@ export const Route = createFileRoute("/projects/$slug")({
 });
 
 function ProjectPage() {
-  const { project } = Route.useLoaderData();
+  const { project, others } = Route.useLoaderData();
   const html = markdownToHtml(project.body);
   const toc = extractToc(project.body);
-  const others = projects.filter((item) => item.slug !== project.slug).slice(0, 3);
 
   return (
     <article className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">

@@ -9,8 +9,8 @@ import { articleJsonLd, breadcrumbJsonLd, pageHead } from "@/lib/seo";
 import { formatDate, readingMinutes } from "@/lib/utils";
 
 export const Route = createFileRoute("/articles/$slug")({
-  loader: ({ params }) => {
-    const article = getArticle(params.slug);
+  loader: async ({ params }) => {
+    const article = await getArticle(params.slug);
     if (!article) throw notFound();
     return { article };
   },

@@ -2,11 +2,16 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArticleCard } from "@/components/article-card";
 import { JsonLd } from "@/components/json-ld";
 import { Badge } from "@/components/ui/badge";
-import { allTags, articles, tagToParam } from "@/data/articles";
+import { allTags, getArticles, tagToParam } from "@/data/articles";
 import { site } from "@/data/site";
 import { breadcrumbJsonLd, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/articles/")({
+  loader: async () => {
+    const tags = await allTags();
+    const articles = await getArticles();
+    return { tags, articles };
+  },
   head: () =>
     pageHead({
       title: `Writing | ${site.name}`,
@@ -17,7 +22,7 @@ export const Route = createFileRoute("/articles/")({
 });
 
 function ArticlesPage() {
-  const tags = allTags();
+  const { tags, articles } = Route.useLoaderData();
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">

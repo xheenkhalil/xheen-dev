@@ -11,6 +11,11 @@ import { engagement, services, site } from "@/data/site";
 import { faqJsonLd, pageHead, personJsonLd, websiteJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
+  loader: async () => {
+    const featured = await featuredProjects();
+    const latest = await latestArticles(3);
+    return { featured, latest };
+  },
   head: () =>
     pageHead({
       title: `${site.name} (${site.alias}) | ${site.title}`,
@@ -31,8 +36,9 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const [lead, ...rest] = featuredProjects();
-  const articles = latestArticles(3);
+  const { featured, latest } = Route.useLoaderData();
+  const [lead, ...rest] = featured;
+  const articles = latest;
 
   return (
     <>

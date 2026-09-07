@@ -58,7 +58,12 @@ test("non-.sql entries are dropped (readdir also yields the auth/ directory)", (
 
 test("the auth schema ships outside the globbed directory", () => {
   const migrationsDir = join(projectRoot(), "migrations");
-  assert.deepEqual(pendingMigrations(readdirSync(migrationsDir), []), []);
+  // Top-level migrations now include 0001_cms_schema.sql (CMS schema).
+  // Auth schema stays under auth/ subdirectory — not auto-applied by the glob.
+  const pending = pendingMigrations(readdirSync(migrationsDir), []);
+  const pendingNames = pending.map((m) => m.name);
+  assert.ok(pendingNames.includes("0001_cms_schema.sql"), "CMS migration should be pending");
+  assert.ok(!pendingNames.includes("0001_auth.sql"), "Auth migration should NOT be at top level");
   assert.ok(readdirSync(join(migrationsDir, "auth")).includes("0001_auth.sql"));
 });
 

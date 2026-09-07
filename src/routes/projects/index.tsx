@@ -1,11 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { JsonLd } from "@/components/json-ld";
 import { ProjectCard } from "@/components/project-card";
-import { projects } from "@/data/projects";
+import { getProjects } from "@/data/projects";
 import { site } from "@/data/site";
 import { breadcrumbJsonLd, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/projects/")({
+  loader: async () => {
+    const projects = await getProjects();
+    return { projects };
+  },
   head: () =>
     pageHead({
       title: `Projects | ${site.name}`,
@@ -16,6 +20,7 @@ export const Route = createFileRoute("/projects/")({
 });
 
 function ProjectsPage() {
+  const { projects } = Route.useLoaderData();
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
       <JsonLd

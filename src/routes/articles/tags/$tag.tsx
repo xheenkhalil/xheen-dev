@@ -7,9 +7,10 @@ import { site } from "@/data/site";
 import { breadcrumbJsonLd, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/articles/tags/$tag")({
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
     const tag = paramToTag(params.tag);
-    return { tag, articles: articlesByTag(tag) };
+    const articles = await articlesByTag(tag);
+    return { tag, articles };
   },
   head: ({ loaderData }) => {
     const tag = loaderData?.tag ?? "Tag";
