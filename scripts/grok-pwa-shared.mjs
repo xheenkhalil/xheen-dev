@@ -6,7 +6,8 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
-export const DEFAULT_APP_NAME = "Grok App";
+export const DEFAULT_APP_NAME = "Moses Thomas — Portfolio & Systems";
+export const DEFAULT_SHORT_NAME = "Xheen";
 export const OG_SERVICE_URL_DEFAULT = "https://og.grok.me";
 export const OG_SITE_REL_PATH = "src/lib/og/site.json";
 
@@ -158,22 +159,38 @@ export function renderInstallPageHtml(template, { host, url } = {}) {
 }
 
 export function renderWebManifest(hostHeader) {
-  const name = appNameFromHost(hostHeader);
+  const name = DEFAULT_APP_NAME;
+  const shortName = DEFAULT_SHORT_NAME;
   return JSON.stringify(
     {
       name,
-      short_name: name,
+      short_name: shortName,
       id: "/",
       start_url: "/",
       scope: "/",
       display: "standalone",
-      background_color: "#000000",
-      theme_color: "#000000",
+      background_color: "#101412",
+      theme_color: "#101412",
       icons: [
         {
-          src: "/__grok/icon-180.png",
+          src: "/apple-touch-icon.png",
           sizes: "180x180",
           type: "image/png",
+        },
+        {
+          src: "/icon-192.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
+        {
+          src: "/icon-512.png",
+          sizes: "512x512",
+          type: "image/png",
+        },
+        {
+          src: "/favicon.svg",
+          sizes: "any",
+          type: "image/svg+xml",
         },
       ],
     },
@@ -184,62 +201,41 @@ export function renderWebManifest(hostHeader) {
 
 export function grokPwaHeadTags(appName = DEFAULT_APP_NAME) {
   return [
-    // Standalone display comes from the manifest ("display": "standalone");
-    // the legacy *-web-app-capable metas it replaces are deliberately absent.
-    ["manifest", '<link rel="manifest" href="/__grok/manifest.webmanifest">'],
-    ["apple-touch-icon", '<link rel="apple-touch-icon" href="/__grok/icon-180.png">'],
+    ["manifest", '<link rel="manifest" href="/site.webmanifest">'],
+    ["apple-touch-icon", '<link rel="apple-touch-icon" href="/apple-touch-icon.png">'],
     [
       "apple-mobile-web-app-title",
-      `<meta name="apple-mobile-web-app-title" content="${escapeHtml(appName)}">`,
+      `<meta name="apple-mobile-web-app-title" content="${escapeHtml(DEFAULT_SHORT_NAME)}">`,
     ],
     [
       "apple-mobile-web-app-status-bar-style",
-      '<meta name="apple-mobile-web-app-status-bar-style" content="black">',
+      '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">',
     ],
-    ["theme-color", '<meta name="theme-color" content="#000000">'],
+    ["theme-color", '<meta name="theme-color" content="#101412">'],
   ];
 }
 
-export const GROK_EXTENSIONS_SCRIPT_SRC = "https://grok.com/grok-app-builder/extensions.js";
+export const GROK_EXTENSIONS_SCRIPT_SRC = "";
 
 export function readGrokProjectId() {
-  const fromProcess = typeof process !== "undefined" ? process.env?.VITE_PROJECT_ID : "";
-  return String(fromProcess ?? "").trim();
+  return "";
 }
 
 export function readXCreator() {
-  const fromProcess = typeof process !== "undefined" ? process.env?.X_CREATOR : "";
-  return String(fromProcess ?? "").trim();
+  return "";
 }
 
 export function readXCreatorId() {
-  const fromProcess = typeof process !== "undefined" ? process.env?.X_CREATOR_ID : "";
-  return String(fromProcess ?? "").trim();
+  return "";
 }
 
-export function grokXCreatorHeadTags(creator = readXCreator(), creatorId = readXCreatorId()) {
-  const name = String(creator ?? "").trim();
-  const id = String(creatorId ?? "").trim();
-  if (!name || !id) return [];
-  return [
-    `<meta property="x:creator" content="${escapeHtml(name)}">`,
-    `<meta property="x:creator:id" content="${escapeHtml(id)}">`,
-  ];
+export function grokXCreatorHeadTags() {
+  return [];
 }
 
-/** Platform "Created with Grok" banner — injected into every HTML document. */
-export function grokExtensionsHeadTags(projectId = readGrokProjectId()) {
-  const id = escapeHtml(projectId);
-  const tags = [];
-  if (projectId) {
-    tags.push(`<meta name="grok-project-id" content="${id}">`);
-  }
-  tags.push(
-    `<script src="${GROK_EXTENSIONS_SCRIPT_SRC}"${
-      projectId ? ` data-project-id="${id}"` : ""
-    } defer></script>`,
-  );
-  return tags;
+/** Grok extensions disabled for Moses Thomas brand */
+export function grokExtensionsHeadTags() {
+  return [];
 }
 
 export function readOgSite(cwd = process.cwd()) {
@@ -436,8 +432,8 @@ export function injectGrokPwaHead(html, ctx = {}) {
 
   const missing = grokPwaHeadTags(appName)
     .filter(([key]) => {
-      if (key === "manifest") return !next.includes('href="/__grok/manifest.webmanifest"');
-      if (key === "apple-touch-icon") return !next.includes('href="/__grok/icon-180.png"');
+      if (key === "manifest") return !next.includes('href="/site.webmanifest"') && !next.includes('href="/__grok/manifest.webmanifest"');
+      if (key === "apple-touch-icon") return !next.includes('href="/apple-touch-icon.png"') && !next.includes('href="/__grok/icon-180.png"');
       return !next.includes(`name="${key}"`);
     })
     .map(([, tag]) => tag);
@@ -446,27 +442,6 @@ export function injectGrokPwaHead(html, ctx = {}) {
     next,
     grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
   );
-
-  if (!next.includes("/grok-app-builder/extensions.js")) {
-    missing.push(...grokExtensionsHeadTags(projectId));
-  } else if (projectId && !next.includes('name="grok-project-id"')) {
-    missing.push(`<meta name="grok-project-id" content="${escapeHtml(projectId)}">`);
-  }
-  if (
-    projectId &&
-    !next.includes('property="grok:app_id"') &&
-    !next.includes("property='grok:app_id'")
-  ) {
-    missing.push(`<meta property="grok:app_id" content="${escapeHtml(projectId)}">`);
-  }
-  const creatorTags = grokXCreatorHeadTags(creator, creatorId);
-  if (creatorTags.length > 0) {
-    const hasCreator =
-      next.includes('property="x:creator" content=') ||
-      next.includes("property='x:creator' content=");
-    if (!hasCreator) missing.push(creatorTags[0]);
-    if (!next.includes('property="x:creator:id"')) missing.push(creatorTags[1]);
-  }
 
   if (missing.length === 0) return next;
   return insertBeforeHeadClose(next, missing.join(""));

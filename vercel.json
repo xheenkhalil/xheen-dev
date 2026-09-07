@@ -32,6 +32,28 @@
       ]
     },
     {
+      "source": "/(apple-touch-icon\\.png|icon-180\\.png|icon-192\\.png|icon-512\\.png|favicon\\.svg)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/site\\.webmanifest",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/manifest+json; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
       "source": "/(robots.txt|sitemap.xml|llms.txt|llms-full.txt)",
       "headers": [
         {
