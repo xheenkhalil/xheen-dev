@@ -13,9 +13,16 @@ import { breadcrumbJsonLd, pageHead } from "@/lib/seo";
 export const Route = createFileRoute("/resume")({
   head: () =>
     pageHead({
-      title: `Expertise | ${site.name}`,
+      title: `Curriculum Vitae | ${site.name} (${site.alias})`,
       description: resumeOverview.body,
       path: "/resume",
+      keywords: [
+        "Moses Thomas CV",
+        "Moses Naantagam Thomas Resume",
+        "Xheen Zhyfer",
+        "Full Stack Engineer CV",
+        "Applied Data Scientist Experience",
+      ],
     }),
   component: ResumePage,
 });
@@ -29,13 +36,16 @@ function ResumePage() {
           { name: "Expertise", path: "/resume" },
         ])}
       />
-      <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
         {resumeOverview.kicker}
       </p>
       <h1 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl">
         {site.name}
       </h1>
-      <p className="mt-2 text-accent">{site.title}</p>
+      <p className="mt-1 font-mono text-sm text-muted-foreground">
+        Full Name: <span className="text-foreground">{site.fullName}</span> · Alias: <span className="text-foreground">{site.alias}</span>
+      </p>
+      <p className="mt-2 text-accent font-medium">{site.title}</p>
       <p className="mt-6 leading-relaxed text-muted-foreground">{resumeOverview.body}</p>
 
       <section className="mt-12">

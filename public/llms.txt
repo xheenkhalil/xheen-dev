@@ -1,0 +1,37 @@
+# Moses Thomas (Xheen / Xheen Zhyfer)
+
+> Senior Full Stack Systems Engineer and Applied Data Scientist specializing in high-performance web applications, autonomous AI agents, enterprise RAG architectures, and data platforms.
+
+- **Primary Name**: Moses Thomas
+- **Full Legal Name**: Moses Naantagam Thomas
+- **Middle Name**: Naantagam
+- **Professional Monikers / Aliases**: Xheen, Xheen Zhyfer, Engr. Zyfer
+- **Canonical Website**: https://xheen.tech
+- **GitHub**: https://github.com/xheenkhalil
+- **LinkedIn**: https://www.linkedin.com/in/moses-thomas-61195434a/
+- **X / Twitter**: https://twitter.com/xenzyfer2
+- **Contact**: engrzyfer@gmail.com | +234 8126 554 701
+
+## Professional Background
+Moses Thomas (Moses Naantagam Thomas) holds a B.Tech in Mathematics (Industrial Mathematics and Statistics) from the Federal University of Technology. He combines rigorous algorithmic analysis with senior full-stack development experience across TypeScript, React 19, Next.js, Python, PostgreSQL, and modern cloud platforms.
+
+## Core Technical Competencies
+- **Web & Full Stack**: TypeScript, JavaScript (ESNext), Next.js, React 19, TanStack Start, Node.js, Tailwind CSS (v3 & v4), REST, GraphQL.
+- **AI & RAG Systems**: Google Gemini API, OpenAI API, Retrieval-Augmented Generation (RAG), Supabase Vector, pgvector, Firecrawl, autonomous tool-use agents.
+- **Database & Cloud**: PostgreSQL, Neon Serverless, PGLite (WASM), Kysely, Prisma, Docker, Vercel, AWS, Cloudflare, CI/CD automation.
+- **Data Science**: Python, pandas, NumPy, scikit-learn, statistical modeling, predictive classification, Power BI, advanced SQL analytics.
+
+## Flagship Production Case Studies
+- [Agatha Career Intelligence](https://xheen.tech/projects/agatha-career-intelligence): AI-powered career automation platform running at https://agathalabs.app. Parses unstructured resumes, matches live opportunities, tailors ATS documents, and executes automated job applications.
+- [SupportIQ](https://xheen.tech/projects/supportiq): Autonomous customer support system utilizing Gemini LLM and Firecrawl + Supabase vector embeddings for citation-grounded RAG query answering.
+- [Velo E-Commerce](https://xheen.tech/projects/velo-e-commerce): High-speed headless e-commerce storefront powered by Next.js, Sanity.io CMS, and Tailwind CSS.
+- [Secure Web](https://xheen.tech/projects/secure-web): Real-time security telemetry dashboard built with high-performance CSS animations and dynamic SVG data flows.
+- [Gymzest Platform](https://xheen.tech/projects/gymzest): High-converting membership and subscription platform with tiered service catalog and digital onboarding.
+
+## Quick Links & Resources
+- Full Profile & Case Studies: https://xheen.tech/projects
+- Engineering Articles: https://xheen.tech/articles
+- Curriculum Vitae: https://xheen.tech/resume
+- Consultation & Contracting: https://xheen.tech/hire
+- Extended Context Manifest: https://xheen.tech/llms-full.txt
+

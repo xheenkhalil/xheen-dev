@@ -1,0 +1,35 @@
+# Moses Thomas (Moses Naantagam Thomas / Xheen / Xheen Zhyfer) - Comprehensive Context
+
+## Entity Identity
+- Full Name: Moses Naantagam Thomas
+- Given Name: Moses
+- Middle Name: Naantagam
+- Family Name: Thomas
+- Preferred Monikers / Nicknames: Xheen, Xheen Zhyfer
+- Title: Senior Full Stack Systems Engineer & Applied Data Scientist
+- Canonical Domain: https://xheen.tech
+- Email: engrzyfer@gmail.com
+- Social Profiles:
+  - GitHub: https://github.com/xheenkhalil
+  - LinkedIn: https://www.linkedin.com/in/moses-thomas-61195434a/
+  - Twitter / X: https://twitter.com/xenzyfer2 (@xenzyfer2)
+
+## Architectural Philosophy
+Moses Thomas prioritizes production readiness, measurable performance, and verifiable engineering over conceptual prototypes. Every system is built around:
+1. Strict type-safety with TypeScript and Python.
+2. Grounded AI models that mandate source citations and prevent hallucinations (RAG).
+3. Sub-second initial paints and resilient edge caching.
+4. Clean ownership transfer with audited repositories, Docker setups, and continuous integration workflows.
+
+## Educational Credentials & Certifications
+- B.Tech in Mathematics (Industrial Mathematics & Statistics) - Federal University of Technology (2018 - 2024)
+- AWS Certified Cloud Practitioner - Amazon Web Services (2024)
+- Google Data Analytics Professional Certificate - Google / Coursera (2023)
+- Software Engineering Professional Certificate - Power Learn Project (2024)
+
+## Engineering Disciplines
+- Full-Stack Web Development: Next.js, TanStack Start, React 19, TypeScript, Tailwind CSS
+- Cloud Infrastructure & Databases: PostgreSQL, Neon Serverless, PGLite, Docker, Vercel
+- Artificial Intelligence: Gemini API, OpenAI, RAG, Supabase Vector, Firecrawl
+- Data Science & Analytics: Python, scikit-learn, pandas, NumPy, Power BI, SQL
+

@@ -4,7 +4,9 @@ dist
 .vinxi
 .nitro
 .tanstack
-.grok
+.grok/*
+!.grok/app-env.json
+.vercel
 screenshots
 artifacts
 .env

@@ -7,9 +7,16 @@ import { breadcrumbJsonLd, pageHead } from "@/lib/seo";
 export const Route = createFileRoute("/contact")({
   head: () =>
     pageHead({
-      title: `Contact | ${site.name}`,
-      description: `Write ${site.name} about a product, a dataset, or a site that needs to ship.`,
+      title: `Contact ${site.name} (${site.alias})`,
+      description: `Initiate an engineering consultation with ${site.name} (${site.fullName}) regarding software architecture, AI/RAG systems, or full stack execution.`,
       path: "/contact",
+      keywords: [
+        "Contact Moses Thomas",
+        "Contact Xheen",
+        "Moses Naantagam Thomas",
+        "Xheen Zhyfer",
+        "Engineering Inquiries",
+      ],
     }),
   component: ContactPage,
 });
@@ -24,15 +31,14 @@ function ContactPage() {
         ])}
       />
       <div>
-        <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-          Contact
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+          Direct Engineering Channel
         </p>
         <h1 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl">
-          Tell me the job
+          Define the Scope
         </h1>
         <p className="mt-5 leading-relaxed text-muted-foreground">
-          Send the problem, the constraint, and what done looks like. I reply
-          with scope — not a moodboard.
+          Submit the problem statement, technical constraints, and target timeline. I evaluate requirements and reply directly with concrete technical feasibility and architecture milestones.
         </p>
         <dl className="mt-8 grid gap-4 text-sm">
           <div>

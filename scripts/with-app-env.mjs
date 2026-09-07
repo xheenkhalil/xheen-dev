@@ -104,6 +104,16 @@ export function isMainModule(moduleUrl) {
   }
 }
 
+function spawnChild(command, args, options) {
+  if (process.platform === "win32" && !command.toLowerCase().endsWith(".exe")) {
+    const quoted = [command, ...args]
+      .map((arg) => (/[\s"^&|<>]/.test(arg) ? `"${arg.replace(/"/g, '""')}"` : arg))
+      .join(" ");
+    return spawn(quoted, { ...options, shell: true });
+  }
+  return spawn(command, args, options);
+}
+
 function main(argv) {
   const [command, ...args] = argv;
   if (!command) {
@@ -111,7 +121,7 @@ function main(argv) {
     process.exit(2);
   }
   const env = mergeAppEnv(readAppEnv(projectRoot()), process.env);
-  const child = spawn(command, args, { stdio: "inherit", env });
+  const child = spawnChild(command, args, { stdio: "inherit", env });
   // The dev server is long-running and is stopped by signalling this wrapper.
   for (const signal of ["SIGINT", "SIGTERM", "SIGHUP"]) {
     process.on(signal, () => child.kill(signal));

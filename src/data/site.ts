@@ -1,15 +1,19 @@
 export const site = {
   name: "Moses Thomas",
+  fullName: "Moses Naantagam Thomas",
+  middleName: "Naantagam",
+  nicknames: ["Xheen", "Xheen Zhyfer"],
+  alias: "Xheen (Xheen Zhyfer)",
   wordmark: "Moses",
-  domain: "xheen.dev",
-  url: "https://xheen.dev",
-  title: "Data Scientist & Full Stack Developer",
-  tagline: "Developer • Data Engineer • Writer",
+  domain: "xheen.tech",
+  url: "https://xheen.tech",
+  title: "Senior Full Stack Engineer & Applied Data Scientist",
+  tagline: "Full-Stack Architecture • Production AI & RAG • Data Intelligence",
   summary:
-    "Building data-driven applications and stunning web experiences. Let's turn your complex data into clear insights.",
+    "Moses Thomas (Moses Naantagam Thomas, professionally known as Xheen or Xheen Zhyfer) is a Senior Full Stack Engineer and Applied Data Scientist engineering high-performance web platforms, production AI/RAG architectures, and data-driven systems.",
   pitch:
-    "Clients hire me to ship the thing: career platforms, RAG support, storefronts, memberships, and analytics you can run a meeting with. The live work below is the standard — not a concept deck.",
-  hero: "You get the live product, not a pitch deck.",
+    "I architect, build, and deploy production software: enterprise-scale web applications, autonomous AI agents, verified RAG pipelines, and operational analytics. No conceptual slide decks — every engagement yields battle-tested software running on live infrastructure.",
+  hero: "Production Systems Engineered to Scale. Delivered to Live Infrastructure.",
   email: "engrzyfer@gmail.com",
   phone: "+234 8126 554 701",
   location: "Remote / Worldwide",
@@ -30,58 +34,58 @@ export const nav = [
 export const platforms = [
   {
     name: "Upwork",
-    blurb: "Top Rated",
+    blurb: "Top Rated Full Stack & AI Specialist",
     href: "https://www.upwork.com",
   },
   {
     name: "Fiverr",
-    blurb: "Level 2",
+    blurb: "Pro & Level 2 Solutions Engineer",
     href: "https://www.fiverr.com",
   },
   {
-    name: "Jobberman",
-    blurb: "Open for Opportunities",
-    href: "https://www.jobberman.com",
+    name: "GitHub",
+    blurb: "Open Source Systems & Repositories",
+    href: "https://github.com/xheenkhalil",
   },
 ] as const;
 
 export const services = [
   {
-    title: "Career platforms",
-    copy: "Intake, matching, documents, and application workflows a job seeker can actually finish — not a chatbot demo.",
+    title: "Enterprise Web Architecture",
+    copy: "High-concurrency web applications built with TypeScript, React 19, Next.js, and modern distributed backends engineered for resilience, accessibility, and sub-second latency.",
   },
   {
-    title: "RAG support",
-    copy: "Chat that cites the docs you already have. Crawled, chunked, retrieved, and answerable in a real support queue.",
+    title: "Production AI & Enterprise RAG",
+    copy: "Grounded retrieval-augmented generation (RAG) and autonomous agent workflows. Ingestion pipelines, vector embeddings, and strict source citation systems designed for real support and enterprise search.",
   },
   {
-    title: "Storefronts",
-    copy: "Headless catalogues, cart, and merchandising without a six-month commerce ceremony.",
+    title: "Headless Commerce & Digital Products",
+    copy: "Custom storefronts, transactional engines, and dynamic membership portals with headless CMS backends and automated payment flows.",
   },
   {
-    title: "Memberships",
-    copy: "Packages, pricing, and a site that sells the next session — not a template with a payment button.",
+    title: "Applied Data Science & Analytics",
+    copy: "Production ML pipelines, statistical modeling, and automated data pipelines. Actionable SQL schemas and executive dashboards built to inform boardroom decisions.",
   },
   {
-    title: "Analytics you can present",
-    copy: "SQL, models, and dashboards that survive a standup. The artefact is the insight, not the notebook.",
+    title: "Systems Auditing & Infrastructure",
+    copy: "Architectural reviews, database performance optimization, CI/CD automation, and operational runbooks that guarantee clean client handoff and ongoing reliability.",
   },
 ] as const;
 
 export const engagement = [
   {
     step: "01",
-    title: "Brief",
-    copy: "We agree the job, the stack, and what done looks like before a line of production code. Constraints go on paper, not in a later surprise.",
+    title: "Architecture & Scope Brief",
+    copy: "We define precise technical constraints, system requirements, tech stack, and verifiable deliverables before writing production code. Clear milestones, no scope surprises.",
   },
   {
     step: "02",
-    title: "Build",
-    copy: "Weekly visible progress on a live URL. You review the product, not a slide that promises one.",
+    title: "Iterative Build & Staging",
+    copy: "Continuous delivery with weekly preview deployments to live URLs. You inspect functioning software and review pull requests, not conceptual status slides.",
   },
   {
     step: "03",
-    title: "Handoff",
-    copy: "Repo, runbook, credentials map, and a Friday artefact you can keep running. Ownership transfers; the work does not evaporate.",
+    title: "Production Delivery & Handoff",
+    copy: "Complete ownership transfer: audited codebase, comprehensive documentation, environment secrets map, and automated test suites that ensure perpetual maintainability.",
   },
 ] as const;
