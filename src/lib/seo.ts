@@ -97,7 +97,8 @@ export function personJsonLd() {
       site.linkedin,
       site.twitter,
       "https://github.com/xheenkhalil",
-      "https://twitter.com/xenzyfer2",
+      "https://www.linkedin.com/in/thomasmosesnaantagam/",
+      "https://x.com/dev_xheen",
     ],
     alumniOf: {
       "@type": "EducationalOrganization",

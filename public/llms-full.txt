@@ -11,8 +11,8 @@
 - Email: engrzyfer@gmail.com
 - Social Profiles:
   - GitHub: https://github.com/xheenkhalil
-  - LinkedIn: https://www.linkedin.com/in/moses-thomas-61195434a/
-  - Twitter / X: https://twitter.com/xenzyfer2 (@xenzyfer2)
+  - LinkedIn: https://www.linkedin.com/in/thomasmosesnaantagam/
+  - Twitter / X: https://x.com/dev_xheen (@dev_xheen)
 
 ## Architectural Philosophy
 Moses Thomas prioritizes production readiness, measurable performance, and verifiable engineering over conceptual prototypes. Every system is built around:

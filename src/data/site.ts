@@ -18,9 +18,9 @@ export const site = {
   phone: "+234 8126 554 701",
   location: "Remote / Worldwide",
   github: "https://github.com/xheenkhalil",
-  linkedin: "https://www.linkedin.com/in/moses-thomas-61195434a/",
-  twitter: "https://twitter.com/xenzyfer2",
-  twitterHandle: "@xenzyfer2",
+  linkedin: "https://www.linkedin.com/in/thomasmosesnaantagam/",
+  twitter: "https://x.com/dev_xheen",
+  twitterHandle: "@dev_xheen",
   photo: "/images/profile.jpg",
 } as const;
 

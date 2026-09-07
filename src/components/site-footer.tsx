@@ -26,6 +26,9 @@ export function SiteFooter() {
           <a href={site.linkedin} className="min-h-11 inline-flex items-center" rel="noreferrer">
             LinkedIn
           </a>
+          <a href={site.twitter} className="min-h-11 inline-flex items-center" rel="noreferrer">
+            X (Twitter)
+          </a>
         </nav>
       </div>
       <div className="border-t border-border">
