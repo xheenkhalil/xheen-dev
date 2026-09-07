@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Moses Thomas — writing</title>
+    <link>https://xheen.dev/articles</link>
+    <description>Notes on shipping data products, RAG systems, and fullstack apps.</description>
+    <item>
+      <title>Shipping Agatha Career Intelligence</title>
+      <link>https://xheen.dev/articles/shipping-agatha-career-intelligence</link>
+      <guid>https://xheen.dev/articles/shipping-agatha-career-intelligence</guid>
+      <pubDate>2026-08-18</pubDate>
+      <description>How I built a career platform that parses a CV, matches roles, rewrites documents, and can apply — without turning the model into the product.</description>
+    </item>
+    <item>
+      <title>RAG chatbots that cite the docs</title>
+      <link>https://xheen.dev/articles/rag-chatbots-that-cite-the-docs</link>
+      <guid>https://xheen.dev/articles/rag-chatbots-that-cite-the-docs</guid>
+      <pubDate>2026-07-12</pubDate>
+      <description>SupportIQ’s retrieval loop: crawl with Firecrawl, embed in Supabase, generate with Gemini, and refuse to answer without a source.</description>
+    </item>
+    <item>
+      <title>SQL that survives a standup</title>
+      <link>https://xheen.dev/articles/sql-that-survives-a-standup</link>
+      <guid>https://xheen.dev/articles/sql-that-survives-a-standup</guid>
+      <pubDate>2026-06-04</pubDate>
+      <description>Grain, denominators, and a recommendation you can still defend after lunch.</description>
+    </item>
+    <item>
+      <title>Headless commerce without the theatre</title>
+      <link>https://xheen.dev/articles/headless-commerce-without-the-theatre</link>
+      <guid>https://xheen.dev/articles/headless-commerce-without-the-theatre</guid>
+      <pubDate>2026-04-21</pubDate>
+      <description>Velo is four screens, a Sanity desk, and a cart that adds.</description>
+    </item>
+    <item>
+      <title>What I hand a client on Friday</title>
+      <link>https://xheen.dev/articles/what-i-hand-a-client-on-friday</link>
+      <guid>https://xheen.dev/articles/what-i-hand-a-client-on-friday</guid>
+      <pubDate>2026-03-11</pubDate>
+      <description>Brief, Build, Handoff — the engagement as a folder.</description>
+    </item>
+    <item>
+      <title>Notes from a data scientist who also ships the site</title>
+      <link>https://xheen.dev/articles/notes-from-a-data-scientist-who-also-ships-the-site</link>
+      <guid>https://xheen.dev/articles/notes-from-a-data-scientist-who-also-ships-the-site</guid>
+      <pubDate>2026-01-26</pubDate>
+      <description>SQL, Next.js, and a Friday URL are the same job from different ends.</description>
+    </item>
+  </channel>
+</rss>
